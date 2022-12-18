@@ -22,17 +22,6 @@ const ProjectsGrid = () => {
       </div>
 
       <div className="my-5 sm:mt-10">
-        <h3
-          className="font-general-regular
-                        text-left text-secondary-dark
-                        dark:text-ternary-light
-                        text-md
-                        sm:text-xl
-                        mb-3
-                        "
-        >
-          Search from my projects
-        </h3>
         <div
           className="
                         flex

@@ -9,26 +9,31 @@ import Projects from "./pages/Projects";
 import ProjectSingle from "./pages/ProjectSingle";
 import { AnimatePresence } from "framer-motion";
 import UseScrollToTop from "./custom hooks/useScrollToTop";
-
+import { HelmetProvider } from "react-helmet-async";
 function App() {
   return (
-    <AnimatePresence>
-      <div className=" bg-secondary-light dark:bg-primary-dark transition duration-300">
-        <Router>
-          <AppHeader />
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="projects" element={<Projects />} />
-            <Route path="projects/single-project" element={<ProjectSingle />} />
+    <HelmetProvider aria-label="title provider">
+      <AnimatePresence>
+        <div className=" bg-secondary-light dark:bg-primary-dark transition duration-300">
+          <Router>
+            <AppHeader />
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="projects" element={<Projects />} />
+              <Route
+                path="projects/single-project"
+                element={<ProjectSingle />}
+              />
 
-            <Route path="about" element={<About />} />
-            <Route path="contact" element={<Contact />} />
-          </Routes>
-          <AppFooter />
-        </Router>
-        <UseScrollToTop />
-      </div>
-    </AnimatePresence>
+              <Route path="about" element={<About />} />
+              <Route path="contact" element={<Contact />} />
+            </Routes>
+            <AppFooter />
+          </Router>
+          <UseScrollToTop />
+        </div>
+      </AnimatePresence>
+    </HelmetProvider>
   );
 }
 
