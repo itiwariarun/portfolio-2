@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { FiMenu, FiMoon, FiSun, FiX } from "react-icons/fi";
 import { Link } from "react-router-dom";
-import useThemeSwitcher from "../../custom hooks/useThemeSwitcher";
+import useThemeSwitcher from "../../customhooks/useThemeSwitcher";
 import HireMeModal from "../HireMeModal";
 import logoLight from "../../img/light.png";
 import logoDark from "../../img/dark.png";
@@ -50,9 +50,17 @@ const AppHeader = () => {
           <div>
             <Link to="/">
               {activeTheme === "dark" ? (
-                <img src={logoDark} className="w-36" alt="Dark Logo" />
+                <img
+                  src={logoDark}
+                  className="lg:w-36 sm:w-24 w-36"
+                  alt="Dark Logo"
+                />
               ) : (
-                <img src={logoLight} className="w-36" alt="Dark Logo" />
+                <img
+                  src={logoLight}
+                  className="lg:w-36 sm:w-24 w-36"
+                  alt="Dark Logo"
+                />
               )}
             </Link>
           </div>
@@ -116,12 +124,20 @@ const AppHeader = () => {
               </span>
             </div>
             <Link
-              to="/projects"
+              to="/"
               className="block text-left text-lg text-primary-dark dark:text-ternary-light hover:text-secondary-dark dark:hover:text-secondary-light  sm:mx-4 mb-2 sm:py-2"
               aria-label="Projects"
             >
+              Home
+            </Link>
+            <Link
+              to="/projects"
+              className="block text-left text-lg text-primary-dark dark:text-ternary-light hover:text-secondary-dark dark:hover:text-secondary-light  sm:mx-4 mb-2 sm:py-2 border-t-2 pt-3 sm:pt-2 sm:border-t-0 border-primary-light dark:border-secondary-dark"
+              aria-label="About Me"
+            >
               Projects
             </Link>
+
             <Link
               to="/about"
               className="block text-left text-lg text-primary-dark dark:text-ternary-light hover:text-secondary-dark dark:hover:text-secondary-light  sm:mx-4 mb-2 sm:py-2 border-t-2 pt-3 sm:pt-2 sm:border-t-0 border-primary-light dark:border-secondary-dark"
@@ -149,12 +165,19 @@ const AppHeader = () => {
         )}
         {/* Header links large screen */}
 
-        <div className="font-general-medium hidden m-0 md::ml-4 mt-5 sm:mt-3 sm:flex p-5 sm:p-0 justify-end items-center shadow-lg sm:shadow-none">
+        <div className="font-general-medium hidden m-0 md::ml-4 mt-5 sm:mt-3 sm:flex p-5 sm:p-0 justify-start items-center shadow-lg sm:shadow-none">
           {!search && (
             <>
               {" "}
               {!search && (
                 <>
+                  <Link
+                    to="/"
+                    className="block text-left md:text-lg text-primary-dark dark:text-ternary-light hover:text-secondary-dark dark:hover:text-secondary-light  sm:mx-4 mb-2 sm:py-2"
+                    aria-label="Projects"
+                  >
+                    Home
+                  </Link>
                   <Link
                     to="/projects"
                     className="block text-left md:text-lg text-primary-dark dark:text-ternary-light hover:text-secondary-dark dark:hover:text-secondary-light  sm:mx-4 mb-2 sm:py-2"
@@ -184,16 +207,16 @@ const AppHeader = () => {
 
         {/* Header right section buttons */}
         <div className="hidden sm:flex justify-between items-center flex-col md:flex-row">
-          <div className="hidden md:flex">
+          {/* Hire me modal */}
+          <div>
             <span
               onClick={showHireMeModal}
-              className="text-md font-general-medium bg-cyan-700 hover:bg-cyan-900 text-white shadow-sm rounded-md px-5 py-2.5 duration-300 "
+              className="font-general-medium hidden lg:block rounded-md text-left text-md bg-cyan-700 hover:bg-cyan-900 text-white shadow-sm  px-3 py-1.5 mt-2 duration-300 "
               aria-label="Hire Me Button"
             >
               <Button title="Hire Me" />
             </span>
           </div>
-
           {/* Theme switcher large screen */}
           <span className="flex gap-3">
             <div
@@ -228,8 +251,9 @@ const AppHeader = () => {
           </span>
         </div>
       </div>
-      {/* Hire me modal */}
+
       <div>
+        {" "}
         {showModal ? (
           <HireMeModal onClose={showHireMeModal} onRequest={showHireMeModal} />
         ) : null}

@@ -9,7 +9,7 @@ const ProjectInfo = () => {
       <div className="w-full sm:w-1/3 text-left">
         {/* Single project objectives */}
         <div className="mb-7">
-          <p className="font-general-regular text-2xl font-semibold text-ternary-dark dark:text-ternary-light mb-2">
+          <p className="font-general-regular text-2xl font-semibold text-ternary- dark:text-ternary-light mb-2">
             {singleProjectData.ProjectInfo.ObjectivesHeading}
           </p>
           <p className="font-general-regular text-primary-dark dark:text-ternary-light">

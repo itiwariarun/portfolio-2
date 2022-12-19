@@ -8,7 +8,7 @@ import Home from "./pages/Home";
 import Projects from "./pages/Projects";
 import ProjectSingle from "./pages/ProjectSingle";
 import { AnimatePresence } from "framer-motion";
-import UseScrollToTop from "./custom hooks/useScrollToTop";
+import UseScrollToTop from "./customhooks/useScrollToTop";
 import { HelmetProvider } from "react-helmet-async";
 function App() {
   return (
