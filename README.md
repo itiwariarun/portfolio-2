@@ -6,3 +6,6 @@
 ##npm install --global yarn
 ##Start a local dev server at <http://localhost:3000>:
 ##yarn start
+
+###live
+https://portfolio-frontend-dev-new.netlify.app/
